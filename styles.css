@@ -5,6 +5,7 @@ html {
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevent scrolling */
 }
 
 /* Container Styling */
@@ -17,6 +18,7 @@ html {
   height: 100vh;
   background: linear-gradient(135deg, #1e1e2f, #4e54c8);
   color: #fff;
+  position: relative;
 }
 
 /* Image Styling */
@@ -24,18 +26,21 @@ html {
   max-width: 300px;
   border-radius: 15px;
   margin-bottom: 20px;
+  z-index: 2; /* Keep it above the animated coins */
 }
 
 /* Text Styling */
 h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  z-index: 2;
 }
 
 p {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #d1d1d1;
+  z-index: 2;
 }
 
 /* Button Styling */
@@ -48,9 +53,67 @@ p {
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s ease;
+  z-index: 2;
 }
 
 .buy-now:hover {
   background: #ff4757;
   transform: scale(1.1);
+}
+
+/* Coin Animation Styling */
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.coin {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url("gbaby.jpg") no-repeat center/contain; /* Add the gbaby image as the coin */
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+.coin:nth-child(1) {
+  left: 10%;
+  animation-duration: 3s;
+  animation-delay: 0s;
+}
+
+.coin:nth-child(2) {
+  left: 25%;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.coin:nth-child(3) {
+  left: 40%;
+  animation-duration: 5s;
+  animation-delay: 0.5s;
+}
+
+.coin:nth-child(4) {
+  left: 55%;
+  animation-duration: 3.5s;
+  animation-delay: 0.2s;
+}
+
+.coin:nth-child(5) {
+  left: 70%;
+  animation-duration: 4.5s;
+  animation-delay: 1.2s;
+}
+
+.coin:nth-child(6) {
+  left: 85%;
+  animation-duration: 5s;
+  animation-delay: 0.8s;
 }

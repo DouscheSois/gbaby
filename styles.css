@@ -1,0 +1,56 @@
+/* General Reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Container Styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f, #4e54c8);
+  color: #fff;
+}
+
+/* Image Styling */
+.coin-image {
+  max-width: 300px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+/* Text Styling */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #d1d1d1;
+}
+
+/* Button Styling */
+.buy-now {
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: #fff;
+  background: #ff6b6b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.buy-now:hover {
+  background: #ff4757;
+  transform: scale(1.1);
+}

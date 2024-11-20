@@ -26,5 +26,25 @@
     <div class="coin"></div>
     <div class="coin"></div>
     <div class="coin"></div>
+
+    <!-- JavaScript for Splash Effect -->
+    <script>
+      // Detect when coins "land" and create a splash effect
+      const coins = document.querySelectorAll(".coin");
+      coins.forEach((coin) => {
+        coin.addEventListener("animationiteration", () => {
+          const splash = document.createElement("div");
+          splash.classList.add("splash");
+          splash.style.left = `${coin.offsetLeft}px`;
+          splash.style.top = `90vh`; // Place the splash at the bottom
+          document.body.appendChild(splash);
+
+          // Remove splash after animation
+          setTimeout(() => {
+            splash.remove();
+          }, 500);
+        });
+      });
+    </script>
   </body>
 </html>

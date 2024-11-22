@@ -4,11 +4,13 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  overflow: hidden; /* Prevent scrolling */
+  font-family: "Arial", sans-serif;
+  scroll-behavior: smooth;
+  background: #f8f6f0; /* Soft egg white background */
+  color: #4f4f4f; /* Light wolf grey text */
 }
 
-/* Container Styling */
+/* Landing Section Styling */
 .container {
   display: flex;
   flex-direction: column;
@@ -18,134 +20,173 @@ html {
   height: 100vh;
   background: linear-gradient(
     135deg,
-    #002244,
-    #001122
-  ); /* Deep oceanic blue gradient */
-  color: #fff;
+    #2a2a2a,
+    /* Dark grey */ #1e1e1e /* Even darker grey */
+  ); /* Dark grey gradient */
+  color: #fff; /* Keep text white for contrast */
   position: relative;
   overflow: hidden;
 }
 
-/* Image Styling */
-.coin-image {
-  max-width: 300px;
-  border-radius: 15px;
+/* G Baby Icon Styling */
+.gbaby-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 240px;
+  background: linear-gradient(135deg, #f3f2ed, #e5e1d9); /* Vanilla gradient */
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
-  z-index: 2; /* Keep it above the animated coins */
+}
+
+.icon-image {
+  max-width: 80%;
+  border-radius: 50%;
 }
 
 /* Text Styling */
 h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  z-index: 2;
+  color: #f8f6f0;
 }
 
 p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #d1d1d1;
-  z-index: 2;
+  color: #f8f6f0;
 }
 
 /* Button Styling */
 .buy-now {
   padding: 15px 30px;
   font-size: 1rem;
-  color: #fff;
-  background: #ff6b6b;
+  color: #333;
+  background: #f8f6f0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s ease;
-  z-index: 2;
 }
 
 .buy-now:hover {
-  background: #ff4757;
+  background: #8b7f72; /* Slightly darker warm grey */
   transform: scale(1.1);
 }
 
-/* Coin Animation Styling */
-@keyframes fall {
-  0% {
-    transform: translateY(-100vh) rotate(0deg);
-    opacity: 1;
-  }
-  80% {
-    transform: translateY(90vh) rotate(360deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
+/* Section Styling */
+.section {
+  background: linear-gradient(
+    135deg,
+    #2a2a2a,
+    /* Dark grey */ #1e1e1e /* Even darker grey */
+  ); /* Dark grey gradient */
+  padding: 60px 20px;
+  text-align: center;
 }
 
-@keyframes splash {
-  0% {
-    transform: scale(0);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
+/* Card Styling */
+.card {
+  max-width: 600px;
+  margin: 0 auto 50px;
+  padding: 20px;
+  background: #f8f6f0;
+  color: #4f4f4f;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
-.coin {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background: url("gbaby.jpg") no-repeat center/contain; /* Add the gbaby image as the coin */
-  border-radius: 50%; /* Make it circular */
-  animation: fall linear infinite;
-  opacity: 0.8;
+.card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #333; /* Dark grey for contrast */
 }
 
-.coin:nth-child(1) {
-  left: 10%;
-  animation-duration: 3s;
-  animation-delay: 0s;
+.card p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #5f5f5f;
 }
 
-.coin:nth-child(2) {
-  left: 25%;
-  animation-duration: 4s;
-  animation-delay: 1s;
+/* General Link Styling */
+a {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the icon and text */
+  justify-content: center;
+  color: #0077cc; /* Blue link */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 10px; /* Add spacing for finger-friendly touch areas */
 }
 
-.coin:nth-child(3) {
-  left: 40%;
-  animation-duration: 5s;
-  animation-delay: 0.5s;
+a:hover {
+  color: #005fa3;
 }
 
-.coin:nth-child(4) {
-  left: 55%;
-  animation-duration: 3.5s;
-  animation-delay: 0.2s;
+/* Icon Styling */
+.shopify-link i,
+.social-link i {
+  font-size: 3rem; /* Larger icon size */
+  margin-bottom: 8px; /* Space between icon and text */
+  color: #5f564c; /* Soft grey */
 }
 
-.coin:nth-child(5) {
-  left: 70%;
-  animation-duration: 4.5s;
-  animation-delay: 1.2s;
+.shopify-link:hover i,
+.social-link:hover i {
+  color: #333; /* Dark grey */
 }
 
-.coin:nth-child(6) {
-  left: 85%;
-  animation-duration: 5s;
-  animation-delay: 0.8s;
+/* Text Styling Below Icon */
+.shopify-link span,
+.social-link span {
+  font-size: 1rem; /* Smaller text size */
+  text-align: center; /* Center align the text */
+}
+/* Inline Icon Styling */
+.inline-icon {
+  width: 24px; /* Set width */
+  height: 24px; /* Set height */
+  margin-left: 8px; /* Add space between text and icon */
+  vertical-align: middle; /* Align the icon with the text */
 }
 
-/* Splash Effect */
-.splash {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  animation: splash 0.5s ease-out forwards;
-  pointer-events: none; /* Prevent interactions */
+/* Footer Styling */
+footer {
+  background: #f8f6f0; /* Soft vanilla/egg white */
+  color: #4f4f4f;
+  padding: 60px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 10px 0;
+  color: #333;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space between the image and text */
+  color: #0077cc; /* Blue link */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #005fa3;
+}
+
+footer .social-icon {
+  width: 24px; /* Adjust size of the image */
+  height: 24px;
+  object-fit: contain;
 }
